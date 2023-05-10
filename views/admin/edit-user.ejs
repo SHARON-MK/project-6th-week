@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body >
+    
+  <div class="container" style="text-align: center; align-items: center; padding-top: 30px;"> 
+    <h1>EDIT USER</h1>
+
+    <form action="" method="post">
+        <input type="text" id="name"  name="name" required value="<%-message.name%>">
+        <p id="er1" style="color: red;"></p>
+        <br>
+        <br>
+        <input type="email" id="email" name="email" required value="<%-message.email%>">
+        <p id="er2" style="color: red;"></p>
+        <br>
+        <br>
+        <input type="text" id="mobile" name="mobile" required value="<%-message.mobile%>">
+        <p id="er3" style="color: red;"></p>
+        <br>
+        <br>
+        <input type="hidden" name="id" value="<%=message._id%>">
+        <input type="submit" value="Update User" onclick="validation()">
+    </form>
+    
+    <%
+    if(typeof message !== 'undefined'){
+      %>
+      
+      <%
+    }
+   %>  
+
+   <br><br><br>
+   <a href="/admin/dashboard">GO BACK</a>
+
+  </div>
+  <script>
+       
+    function validation() {
+        
+        const name = document.getElementById("name").value;
+        const email = document.getElementById("email").value;
+        const mobile = document.getElementById("mobile").value;
+    
+        if (name === "") {
+            document.getElementById('er1').innerText='name must be filled out '
+        } else{
+            document.getElementById('er1').innerText=''
+          }
+        
+        if (email === "") {
+            document.getElementById('er2').innerText='email must be filled out '
+        } else{
+            document.getElementById('er2').innerText=''
+          }
+
+          if (mobile === "") {
+            document.getElementById('er3').innerText='mobile must be filled out '
+        } else{
+            document.getElementById('er3').innerText=''
+          }
+    }
+      
+  </script>
+
+</body>
+</html>
+
+

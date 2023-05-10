@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+   <title>Document</title>
+</head>
+
+<style>
+
+  .container{
+      height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;    }
+  .box{
+    border-radius: 20px;
+      width: 500px;
+  height: auto;
+  background-color: rgba(247, 251, 255, 0.712);
+  box-shadow: 0px 10px 20px rgb(186, 181, 180)
+  }
+  a{
+    text-decoration: none;
+    margin-left: 180px;
+    padding-bottom: 13px;
+  }
+
+  .inp{
+        margin-left:26px;
+   
+        padding: 8px;
+        width: 90%;
+    }
+    .inp1{
+        margin-left:26px;
+   
+        padding: 8px;
+        width: 90%;
+    }
+    h1{
+        text-align: center;
+    }
+
+    .but{
+        margin-left: 180px;
+    }
+
+
+  
+</style>
+
+
+<body background="https://t3.ftcdn.net/jpg/03/55/60/70/360_F_355607062_zYMS8jaz4SfoykpWz5oViRVKL32IabTP.jpg">
+   
+<div class="container">
+<div class="box">
+    <% if(typeof message !== 'undefined'){ %>
+        <p id="er2" style="color:green;text-align: center;"><%= message %></p>
+        <% } %>
+    
+<form  name= "myFornm" action="" method="post"> 
+    <h1 class="h11">Registration</h1> 
+   <input class="inp" type="text" id="name" name="name" placeholder="ENTER YOUR NAME"  required>
+   <p id="er1" style="color: red;text-align: center;"></p>
+  
+   <input class="inp" type="email" id="email" name="email" placeholder="ENTER YOUR EMAIL" required >
+   <p id="er2" style="color: red;text-align: center;"></p>
+
+   <% if(typeof alert !== 'undefined'){ %>
+    <p id="er2" style="color: red;text-align: center;"><%= alert%></p>
+    <% } %>
+
+
+
+   <input class="inp" type="number" id="mob" name="mob" placeholder="ENTER YOUR MOBILE NUMBER" required>
+   <p id="er3" style="color: red;text-align: center;"></p>
+
+   <div class="inp1">
+   <label for="gender">Gender:</label>
+   <input type="radio" id="male" name="gender" value="male" >
+   <label for="male">Male</label>
+   <input type="radio" id="female" name="gender" value="female" >
+   <label for="female">Female</label>
+   <input type="radio" id="other" name="gender" value="other" >
+   <label for="other">Other</label><br>
+   <p id="er5" style="color: red;text-align: center;"></p>
+
+  </div>
+   <input class="inp" type="password" id="password" name="password" placeholder="ENTER YOUR PASSWORD">
+   <p id="er4" style="color: red;text-align: center;"></p>
+
+   <br><br>
+
+
+   <input class="btn btn-success but" type="submit" onclick="validation()" value="Register">
+   
+</form> 
+<br>
+<a href="/login">Alredy User</a>
+<br>
+
+
+
+
+</div>
+</div>
+
+
+
+<script>
+       
+    function validation() {
+        const name= document.getElementById("name").value;
+        const email = document.getElementById("email").value;
+        const mob=document.getElementById("mob").value;
+        const password = document.getElementById("password").value;
+        const male=document.getElementById('male');
+        const female=document.getElementById('male');
+        const other=document.getElementById('male');
+
+
+           if(!male.checked&&!female.checked&&!other.checked){
+
+            document.getElementById('er5').innerText='Gender must be filled out '
+
+            
+           }
+           
+    
+        if (name === "") {
+            document.getElementById('er1').innerText='Name must be filled out '
+
+
+        }
+        if (email === "") {
+            document.getElementById('er2').innerText='Email must be filled out '
+        }
+        if (mob === "") {
+            document.getElementById('er3').innerText='Mobile Number must be filled out '  
+        }
+        if (password === "") {
+            document.getElementById('er4').innerText='password must be filled out '
+        }
+    }
+      
+
+  </script>
+<!-- Option 1: Bootstrap Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+<!-- Option 2: Separate Popper and Bootstrap JS -->
+<!--
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+-->
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
